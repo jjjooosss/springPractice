@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;spring_ex8_1/src/main/resources/oracle.properties&apos; to &apos;oracle.account&apos;" description="Rename resource &apos;oracle.properties&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/oracle.properties" name="oracle.account" stamp="1684889899047" updateReferences="true"/>
+</session>

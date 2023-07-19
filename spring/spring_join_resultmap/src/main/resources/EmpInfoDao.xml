@@ -1,0 +1,46 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgy.spring_join_resultmap.dao.EmpInfoDao">
+<!--    EmpDto를 id가 empDto로 매핑-->
+<!--    id column : pk인 컬럼 , result column : pk가 아닌 컬럼-->
+    <resultMap id="empDto" type="com.lgy.spring_join_resultmap.dto.EmpDto">
+        <id column="empno" property="empno"></id>
+        <result column="ename" property="ename"></result>
+        <result column="job" property="job"></result>
+        <result column="mgr" property="mgr"></result>
+        <result column="ename" property="ename"></result>
+        <result column="sal" property="sal"></result>
+        <result column="comm" property="comm"></result>
+        <result column="deptno" property="deptno"></result>
+    </resultMap>
+<!--    DeptDto 를 deptDto로 매핑-->
+    <resultMap id="deptDto" type="com.lgy.spring_join_resultmap.dto.DeptDto">
+        <id column="deptno" property="deptno"></id>
+        <result column="dname" property="dname"></result>
+        <result column="loc" property="loc"></result>
+    </resultMap>
+
+    <!--    EmpJoinDeptDto 를 empJoinDeptDto 매핑-->
+<!--    collection 태그는  list(Arraylist) 매핑-->
+<!--    property : Dto에 있는 프로퍼티-->
+<!--    resultMap="empDto" : resultMap id="empDto"와 매칭-->
+<!--    resultMap="deptDto" : resultMap id="deptDto"와 매칭-->
+    <resultMap id="empJoinDeptDto" type="com.lgy.spring_join_resultmap.dto.EmpJoinDeptDto">
+<!--    private ArrayList<EmpDto> emps;-->
+<!--    private ArrayList<DeptDto> depts;-->
+        <collection property="emps" resultMap="empDto"></collection>
+        <collection property="depts" resultMap="deptDto"></collection>
+    </resultMap>
+<!--    <select id="list" resultType="com.lgy.spring_join_resultmap.dto.EmpDeptDto">-->
+<!--    resultMap값은 resultMap 태그의 id와 매핑-->
+    <select id="list" resultMap="empJoinDeptDto">
+        select e.empno
+        ,e.ename
+        ,d.deptno
+        ,d.dname
+        from emp e join dept d
+        on e.deptno = d.deptno
+        order by e.empno
+    </select>
+</mapper>

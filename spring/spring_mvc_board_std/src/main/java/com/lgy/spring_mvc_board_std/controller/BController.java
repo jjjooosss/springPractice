@@ -1,0 +1,87 @@
+
+package com.lgy.spring_mvc_board_std.controller;
+
+import com.lgy.spring_mvc_board_std.dto.BDto;
+import com.lgy.spring_mvc_board_std.service.BService;
+import com.lgy.spring_mvc_board_std.service.BServiceImpl;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+@Slf4j
+@Controller
+public class BController {
+//    @Autowired
+//    private SqlSession sqlSession;
+//    서비스단에서 SqlSession 이미 사용. 필요없음!
+    @Autowired
+    private BService service;
+
+    @RequestMapping("/list")
+    public String list(Model model) {
+        log.info("@# list");
+//        IBDao dao = sqlSession.getMapper(IBDao.class);
+//        model.addAttribute("list",dao.list());
+        ArrayList<BDto> list = service.list();
+        model.addAttribute("list",list);
+
+        return "list";
+    }
+    @RequestMapping("/write")
+//    public String write(HttpServletRequest request, Model model) {
+    public String write(@RequestParam HashMap<String, String> param) {
+        log.info("@# write");
+//        IBDao dao = sqlSession.getMapper(IBDao.class);
+//        dao.write(request.getParameter("bname")
+//                ,request.getParameter("btitle")
+//                ,request.getParameter("bcontent"));
+        service.write(param);
+        return "redirect:list";
+    }
+
+    @RequestMapping("/write_view")
+    public String write_view() {
+        log.info("@# write_view");
+
+        return "write_view";
+    }
+
+    @RequestMapping("/content_view")
+//    public String content_view(HttpServletRequest request, Model model) {
+    public String content_view(@RequestParam HashMap<String, String> param, Model model) {
+        log.info("@# content_view");
+//        IBDao dao = sqlSession.getMapper(IBDao.class);
+//        model.addAttribute("content_view", dao.contentView(request.getParameter("bid")));
+        BDto dto = service.contentView(param);
+        model.addAttribute("content_view",dto);
+        return "content_view";
+    }
+    @RequestMapping("/modify")
+    public String modify(@RequestParam HashMap<String, String> param) {
+        log.info("@# modify");
+//        IBDao dao = sqlSession.getMapper(IBDao.class);
+//        dao.modify(request.getParameter("bid")
+//                ,request.getParameter("bname")
+//                ,request.getParameter("btitle")
+//                ,request.getParameter("bcontent"));
+        service.modify(param);
+        return "redirect:list";
+    }
+    @RequestMapping("/delete")
+//    public String delete(HttpServletRequest request, Model model) {
+    public String delete(@RequestParam HashMap<String, String> param) {
+        log.info("@# delete");
+
+//        IBDao dao = sqlSession.getMapper(IBDao.class);
+//        dao.delete(request.getParameter("bid"));
+        service.delete(param);
+
+        return "redirect:list";
+    }
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.lgy.spring_mvc_board.controller.BCcontroller&apos; to &apos;BController&apos;&#x0D;&#x0A;- Original project: &apos;spring_mvc_board&apos;&#x0D;&#x0A;- Original element: &apos;com.lgy.spring_mvc_board.controller.BCcontroller&apos;&#x0D;&#x0A;- Renamed element: &apos;com.lgy.spring_mvc_board.controller.BController&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;BCcontroller&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.lgy.spring_mvc_board.controller{BCcontroller.java[BCcontroller" matchStrategy="1" name="BController" qualified="false" references="true" similarDeclarations="false" stamp="1686098864422" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,70 @@
+package com.lgy.spring_test_member_std.controller;
+
+import com.lgy.spring_test_member_std.dto.MemDto;
+import com.lgy.spring_test_member_std.service.MemService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+@Slf4j
+@Controller
+public class MemController {
+
+    @Autowired
+    private MemService service;
+
+    @RequestMapping("register")
+    public String register(){
+        log.info("register");
+
+        return "register";
+    }
+    @RequestMapping("login")
+    public String login(){
+        log.info("login");
+
+        return "login";
+    }
+    @RequestMapping("loginSuccess")
+    public String loginSuccess(){
+        log.info("loginSuccess");
+
+        return "loginSuccess";
+    }
+//    @RequestMapping("loginOk")
+//    컨트롤러단에서 분기처리
+//    public String loginOk(@RequestParam HashMap<String, String> param, Model model){
+//        log.info("loginOk");
+//        int re = -1;//기본값, 아이디도 없으면 -1
+//        ArrayList<MemDto> dto = service.loginOk(param);
+//        String user_pwd = param.get("mem_pwd");//유저가 입력한 값
+//        if (!dto.isEmpty()){
+//            String query_pwd = dto.get(0).getMem_pwd();
+//            re = (user_pwd.equals(query_pwd)) ? 1:0;//로그인성공이 1 비번틀리면 0
+//        }
+//        model.addAttribute("loginStatus",re);
+//        return "loginOk";
+//    }
+
+    @RequestMapping("loginOk")
+//    서비스단에서 분기처리
+    public String loginOk(@RequestParam HashMap<String, String> param, Model model){
+        log.info("loginOk");
+        int re = service.loginOk(param);
+        model.addAttribute("loginStatus",re);
+        return "loginOk";
+    }
+    @RequestMapping("registerOk")
+    public String registerOk(@RequestParam HashMap<String, String> param){
+        log.info("registerOk");
+        service.register(param);
+        return "redirect:login";
+    }
+
+}

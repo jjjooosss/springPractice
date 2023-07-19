@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	
+	<bean id="employee1" class="com.lgy.spring_ex6_1.Employee">
+		<constructor-arg value="임영웅"></constructor-arg>
+		<property name="sal" value="300"></property>
+		<property name="celtificates">
+			<list>
+				<value>정보처리기사</value>			
+				<value>sqID</value>			
+			</list>
+		</property>
+	</bean>
+	<bean id="employeeInfo1" class="com.lgy.spring_ex6_1.EmployeeInfo">
+		<property name="employee">
+			<ref bean="employee1"/>
+		</property>
+	</bean>
+</beans>

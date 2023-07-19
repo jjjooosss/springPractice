@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.boot.dao.MemDao">
+
+	  <select id="loginOk" resultType="com.boot.dto.MemDto" parameterType="hashmap">
+        select mem_pwd from mvc_member where mem_uid =#{mem_uid}
+    </select>
+    
+    <insert id="register" parameterType="hashmap">
+        insert into mvc_member values(#{mem_uid},#{mem_pwd},#{mem_name})
+    </insert>
+
+</mapper>

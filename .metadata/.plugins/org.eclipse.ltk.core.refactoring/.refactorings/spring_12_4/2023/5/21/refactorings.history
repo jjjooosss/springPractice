@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;spring_12_4/src/main/java/com/lgy/spring_12_3&apos; to &apos;spring_12_4&apos;" description="Rename resource &apos;spring_12_3&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/com/lgy/spring_12_3" name="spring_12_4" stamp="1685068950988" updateReferences="true"/>
+</session>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!-- Calculater 클래스로 calculater 객체 생성 -->
+	<bean id="calculater" class="com.lgy.spring_3_2.Calculater"></bean>
+	
+<!-- 	MyCalculator 클래스로 myCalculator 객체 생성 -->
+<!-- 		MyCalculator 안에 Calculater 객체가 포함되있으므로 얘만 소환해도됨? -->
+<!-- 	<bean id="myCalculator" class="com.lgy.spring_3_2.MyCalculator"> -->
+	<bean id="myCalculator2" class="com.lgy.spring_3_2.MyCalculator">
+<!-- 		setCalculater 호출 -->
+		<property name="calculater">
+<!-- 			bean id="calculater" 객체를 여기 소환한거
+				(setCalculater 메소드 매개변수가 객체타입이니까) -->
+			<ref bean="calculater"/>
+		</property>
+<!-- 		setFirstNum 호출 -->
+		<property name="firstNum" value="10"></property>
+<!-- 		setSecondNum 호출 -->
+		<property name="secondNum" value="2"></property>
+	</bean>
+</beans>

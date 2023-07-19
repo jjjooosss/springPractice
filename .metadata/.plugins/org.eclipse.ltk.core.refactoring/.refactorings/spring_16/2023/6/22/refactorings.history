@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;spring_16/src/main/webapp/WEB-INF/views/uploadQuery.jsp&apos; to &apos;uploadJquery.jsp&apos;" description="Rename resource &apos;uploadQuery.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/WEB-INF/views/uploadQuery.jsp" name="uploadJquery.jsp" stamp="1685688235258" updateReferences="true"/>
+</session>

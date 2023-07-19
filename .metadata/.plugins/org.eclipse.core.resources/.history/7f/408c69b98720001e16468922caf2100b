@@ -1,0 +1,16 @@
+package com.boot.service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import com.boot.dto.BDto;
+
+public interface BService {
+//    페이징 처리 없는 목록
+    ArrayList<BDto> list();
+    void write(HashMap<String,String> param);
+    BDto contentView(HashMap<String,String> param);
+//    void modify(HashMap<String,String> param);
+//    void delete(HashMap<String,String> param);
+//    int getTotalCount();
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.lgy.spring_11_1&apos; to &apos;com.lgy.spring_12_1&apos;&#x0D;&#x0A;- Original project: &apos;spring_12_1&apos;&#x0D;&#x0A;- Original element: &apos;spring_12_1/src/main/java/com.lgy.spring_11_1&apos;&#x0D;&#x0A;- Renamed element: &apos;spring_12_1/src/main/java/com.lgy.spring_12_1&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.lgy.spring_11_1&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.lgy.spring_11_1" name="com.lgy.spring_12_1" qualified="false" references="true" stamp="1685064981004" textual="false" version="1.0"/>
+</session>

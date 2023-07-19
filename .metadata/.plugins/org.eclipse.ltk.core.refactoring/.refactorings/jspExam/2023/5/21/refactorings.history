@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;jspExam/WebContent/Columns.jsp&apos; to &apos;userTabColumnsForm.jsp&apos;" description="Rename resource &apos;Columns.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/Columns.jsp" name="userTabColumnsForm.jsp" stamp="1684976964423" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;jspExam/WebContent/userTab.html&apos; to &apos;.html&apos;" description="Rename resource &apos;userTab.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/userTab.html" name=".html" stamp="1684977042160" updateReferences="true"/>
+</session>

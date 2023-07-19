@@ -1,0 +1,16 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--IBdao와 연결되어있어야하므로. namespqce에 IBDao 의 경로 적어줌-->
+<mapper namespace="com.lgy.spring_join.dao.EmpInfoDao">
+    <!--        IBDao와 매칭되는 아이디-->
+    <select id="list" resultType="com.lgy.spring_join.dto.EmpDeptDto">
+        select e.empno
+        ,e.ename
+        ,d.deptno
+        ,d.dname
+        from emp e join dept d
+        on e.deptno = d.deptno
+        order by e.empno
+    </select>
+</mapper>

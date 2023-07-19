@@ -1,0 +1,11 @@
+package com.boot.dao;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import com.boot.dto.MemDto;
+
+public interface MemDao {
+    ArrayList<MemDto> loginOk(HashMap<String, String> param);
+    void register(HashMap<String, String> param);
+}

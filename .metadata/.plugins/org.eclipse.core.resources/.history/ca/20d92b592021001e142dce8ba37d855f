@@ -1,0 +1,43 @@
+package com.boot.service;
+
+import com.boot.dao.MemDao;
+import com.boot.dto.MemDto;
+
+import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+@Service
+@Slf4j
+public class MemServiceImpl implements MemService{
+    @Autowired
+    private MemDao dao;
+    
+
+
+    @Override
+    public int loginOk(HashMap<String, String> param) {
+        log.info("@# MemServiceImpl.loginOk() start");
+
+        ArrayList<MemDto> loginOk = dao.loginOk(param);
+        String userPwd = param.get("mem_pwd");
+        int re = -1;
+        if (!loginOk.isEmpty()){
+            String queryPwd = loginOk.get(0).getMem_pwd();
+            re = (userPwd.equals(queryPwd))? 1:0;
+        }
+        return re;
+    }
+
+    @Override
+    public void register(HashMap<String, String> param) {
+        log.info("@# MemServiceImpl.register() start");
+
+        dao.register(param);
+
+    }
+}

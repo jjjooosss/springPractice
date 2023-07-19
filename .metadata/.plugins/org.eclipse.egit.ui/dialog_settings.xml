@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="GitSelectRepositoryPage.lastRepository" value="C:\Users\GGG\git\SpringPracticeGreen\.git"/>
+	<list key="EGit.KnownHosts">
+		<item value="bitbucket.org"/>
+		<item value="git.eclipse.org"/>
+		<item value="github.com"/>
+	</list>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/jjjooosss/SpringPracticeGreen.git"/>
+	</list>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item key="HORIZONTAL_SASH_FORM_WEIGHT" value="200,200"/>
+		<item key="STAGING_SASH_FORM_WEIGHT" value="200,200"/>
+		<item key="sortItemState" value="true"/>
+	</section>
+	<section name="GitCommitMessageComponent">
+		<list key="C:\Users\GGG\git\SpringPracticeGreen\.git">
+			<item value="false"/>
+			<item value="GGG &lt;GGG@DESKTOP-8N3GG4O&gt;"/>
+			<item value="first"/>
+			<item value="GGG &lt;GGG@DESKTOP-8N3GG4O&gt;"/>
+			<item value="e9f2375301f5cad5765b1455f5616607496a3414"/>
+			<item value="0"/>
+			<item value="false"/>
+		</list>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.push.PushResultDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="247"/>
+		<item key="DIALOG_Y_ORIGIN" value="278"/>
+		<item key="DIALOG_WIDTH" value="666"/>
+		<item key="DIALOG_HEIGHT" value="458"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+		<list key="sashWeights">
+			<item value="600"/>
+			<item value="400"/>
+		</list>
+	</section>
+</section>

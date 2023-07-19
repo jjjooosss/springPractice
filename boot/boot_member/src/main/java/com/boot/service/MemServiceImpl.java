@@ -1,0 +1,53 @@
+package com.boot.service;
+
+import com.boot.dao.MemDao;
+import com.boot.dto.MemDto;
+
+import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+@Service
+@Slf4j
+public class MemServiceImpl implements MemService{
+    @Autowired
+    private MemDao dao;
+    
+
+
+    @Override
+    public int loginOk(HashMap<String, String> param) {
+        log.info("@# MemServiceImpl.loginOk() start");
+
+//        로그인 ok쿼리 실행=> 유저가 입력한 아이디에 맞는 비밀번호가  Memdto에 담긴것이 loginOk변수
+//        ArrayList<MemDto> loginOk = dao.loginOk(param);
+       MemDto loginOk = dao.loginOk(param);
+//        유저가 입력한 비밀번호 param에서 갖고와서 userPwd변수에저장
+        String userPwd = param.get("mem_pwd");
+       
+//        아예 아이디도 없음
+        int re = -1;
+//        유저가 입력한 아이디에 비번이 존재한다면? => 아이디가 존재함!
+//        if (!loginOk.isEmpty()){
+        	if (loginOk != null){
+//        	dto리스트에서 0번째 인덱스에서 비번 갖고와서 queryPwd에 저장
+//            String queryPwd = loginOk.get(0).getMem_pwd();
+            String queryPwd = loginOk.getMem_pwd();
+//            일치 = 로그인성공 =1 , 다름 =비번틀림 =0
+            re = (userPwd.equals(queryPwd))? 1:0;
+        }
+        return re;
+    }
+
+    @Override
+    public void register(HashMap<String, String> param) {
+        log.info("@# MemServiceImpl.register() start");
+
+        dao.register(param);
+
+    }
+}
